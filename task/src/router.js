@@ -1,13 +1,11 @@
 import { createRouter,createWebHistory } from "vue-router";
 import AppHome from './pages/AppHome.vue'
-import AppAbout from './pages/AppAbout.vue'
-import AppContact from './pages/AppContact.vue'
-import AppShop from './pages/AppShop.vue'
-import AppProducts from './pages/AppProducts.vue'
-import AppProductsAdd from './pages/AppProductsAdd.vue'
+import AppCustomer from './pages/AppCustomer.vue'
+import AppCustomerAdd from './pages/AppCustomerAdd.vue'
+import AppBill from './pages/AppBill.vue'
+import AppBillAdd from './pages/AppBillAdd.vue'
 import AppLogin from './pages/AppLogin.vue'
 import AppRegister from './pages/AppRegister.vue'
-import AppProductDetails from './pages/AppProductDetails.vue'
 
 
 const routes = [
@@ -17,31 +15,29 @@ const routes = [
         meta: {FrontendLogin: false}
     },
     { 
-        path:"/about-me", 
-        component:AppAbout,
-        meta: {FrontendLogin: false}
+        path:"/customerlist", 
+        component:AppCustomer,
+        meta: {FrontendLogin: true} 
     },
     { 
-        path:"/shop", 
-        component:AppShop,
-        meta: {FrontendLogin: false}
-    },
-    { 
-        path:"/products", 
-        component:AppProducts,
-        meta: {FrontendLogin: false} 
-    },
-    { 
-        path:"/products/add", 
-        component:AppProductsAdd,
+        path:"/customer/add", 
+        component:AppCustomerAdd,
         meta: {FrontendLogin: true}
  
     },
+
     { 
-        path:"/contact-me", 
-        component:AppContact,
-        meta: {FrontendLogin: false}
+        path:"/billlist", 
+        component:AppBill,
+        meta: {FrontendLogin: true} 
     },
+    { 
+        path:"/bill/add", 
+        component:AppBillAdd,
+        meta: {FrontendLogin: true}
+ 
+    },
+ 
     { 
         path:"/login", 
         component:AppLogin,
@@ -54,8 +50,8 @@ const routes = [
     },
 
     { 
-        path:"/productdetails/:id", 
-        component:AppProductDetails,
+        path:"/billdelete/:id", 
+        component:AppBill,
         meta: {FrontendLogin: false}
     },
 ]

@@ -26,14 +26,10 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
 
     
 });
-Route::get("product",[ProductController::class,'index']);
-Route::post("product",[ProductController::class,'store']);
-Route::post("productdetails/{id}",[ProductController::class,'show']);
+
 
 Route::post("login",[UserController::class,'login']);
 Route::post("register",[UserController::class,'register']);
-
-Route::get("check",function(){ return 'Oliullah'; });
 
 //Customer Routes Start
 Route::get("customerlist",[CustomerController::class,'index']);

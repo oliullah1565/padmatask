@@ -73,7 +73,7 @@ class BillController extends Controller
     public function show($id)
     {
         $data= Bill::where('id', $id)->first();
-        Event::fire(new SendMail($data->id));
+        //Event::fire(new SendMail($data->id));
         return response($data, 201);
     }
 
@@ -121,7 +121,7 @@ class BillController extends Controller
     {
         $bill = Bill::findOrFail($id);
         $bill->delete();
-        $meg="Bill Delete Successfully";
-        return response($meg, 201);
+        $data= Bill::get();
+        return response($data, 201);
     }
 }

@@ -16,4 +16,7 @@ class Bill extends Model
         'amount',
         'status',
     ];
+    public function customer(){
+        return $this->belongsTo(User::class,'cusid','id');
+    }
 }

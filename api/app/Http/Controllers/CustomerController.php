@@ -56,7 +56,7 @@ class CustomerController extends Controller
             $users->save();
         }
 
-        $data= User::where('email', $request->email)->first();
+        $data= User::where('usertype','customer')->get();
     
         return response($data, 201);
     }
